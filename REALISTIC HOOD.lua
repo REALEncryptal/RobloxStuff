@@ -54,7 +54,7 @@ w1:Slider(
     "Flight Speed",
     "fsm",
     .1,
-   30,
+   200,
     function(value)
         data.flightSpeedMod = value
     end
