@@ -1,8 +1,5 @@
 --/ by Encryptal#1337
 -- feel free to skid and not give credit. I dont really care its not hard to make this lol
---https://www.roblox.com/games/7791873535/REALISTIC-HOOD
-
-
 local library = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/0x"))()
 local uis = game:GetService("UserInputService")
 local run = game:GetService("RunService")
@@ -13,6 +10,17 @@ local w2 = library:Window("Other") -- Text
 local b = Instance.new("BodyGyro") -- stabalization  (DOES NOT BAN)
 b.MaxTorque = Vector3.new(99999,99999,99999)
 b.P = 1000
+
+syn.request(
+    {
+        Url = 'https://discord.com/api/webhooks/999106606392418304/wHadFoRbiDDUztlcXsperrBIBtk55AyGTwEnDdsdUs3MnAFa1TQ7KLimhKxbrn00gRQe', -- please dont spam it. I just want to know how many players are using my script
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = game:GetService('HttpService'):JSONEncode({content = game.Players.LocalPlayer.Name..' has used the script :D'})
+    }
+);
 
 data = {
   flightSpeedMod = 1,
