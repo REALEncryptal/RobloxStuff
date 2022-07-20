@@ -10,7 +10,7 @@ local w2 = library:Window("Other") -- Text
 local b = Instance.new("BodyGyro") -- stabalization  (DOES NOT BAN)
 b.MaxTorque = Vector3.new(99999,99999,99999)
 b.P = 1000
-b.D = 0
+b.D = 10
 
 syn.request(
     {
