@@ -5,7 +5,7 @@ local uis = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 
 local w1 = library:Window("Movement") -- Text
-local w2 = library:Window("Other") -- Text
+local w2 = library:Window("World") -- Text
 
 local b = Instance.new("BodyGyro") -- stabalization  (DOES NOT BAN)
 b.MaxTorque = Vector3.new(99999,99999,99999)
@@ -28,6 +28,16 @@ data = {
   fly = false,
   alwaysDay = false,
   destroy = false
+}
+
+local cars = {
+  "TRACKHAWK",
+  "STINGRAY",
+  "F150",
+  "MUSTANG",
+  "RX7",
+  "EK9",
+  "CRF250"
 }
 
 w1:Toggle(
@@ -54,9 +64,20 @@ w1:Slider(
     "Flight Speed",
     "fsm",
     .1,
-   200,
+   30,
     function(value)
         data.flightSpeedMod = value
+    end
+)
+
+w2:Button(
+    "print car",
+    function()
+        for _,v in ipairs(workspace:GetChildren()) do
+          if table.find(cars, v.Name) then
+            print(v.Name)
+          end
+        end
     end
 )
 
@@ -73,7 +94,9 @@ w2:Button(
     end
 )
 
-local version = "1.0.8"
+
+
+local version = "1.1.0"
 
 w1:Label("Floppa v"..version) -- Text
 w1:Label("Encryptal#1337") -- Text
