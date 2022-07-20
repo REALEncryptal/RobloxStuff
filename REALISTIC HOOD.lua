@@ -98,6 +98,7 @@ render = run.RenderStepped:Connect(function(deltaTime)
 
   -- FLY EXPLOIT
   if data.fly then
+    b.CFrame = workspace.Camera.CFrame
     hrp.AssemblyLinearVelocity = workspace.Camera.CFrame.LookVector * 0 * data.flightSpeedMod * deltaTime
     if uis:IsKeyDown(Enum.KeyCode.W) then flyMethod1(workspace.Camera.CFrame.LookVector, deltaTime) end
     if uis:IsKeyDown(Enum.KeyCode.A) then flyMethod1((workspace.Camera.CFrame * CFrame.Angles(0,math.rad(90),0)).LookVector, deltaTime) end
