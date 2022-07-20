@@ -10,7 +10,6 @@ local w2 = library:Window("Other") -- Text
 local b = Instance.new("BodyGyro") -- stabalization  (DOES NOT BAN)
 b.MaxTorque = Vector3.new(99999,99999,99999)
 b.P = 1000
-b.D = 10
 
 syn.request(
     {
@@ -99,7 +98,6 @@ render = run.RenderStepped:Connect(function(deltaTime)
 
   -- FLY EXPLOIT
   if data.fly then
-    b.CFrame = workspace.Camera.CFrame
     hrp.AssemblyLinearVelocity = workspace.Camera.CFrame.LookVector * 0 * data.flightSpeedMod * deltaTime
     if uis:IsKeyDown(Enum.KeyCode.W) then flyMethod1(workspace.Camera.CFrame.LookVector, deltaTime) end
     if uis:IsKeyDown(Enum.KeyCode.A) then flyMethod1((workspace.Camera.CFrame * CFrame.Angles(0,math.rad(90),0)).LookVector, deltaTime) end
