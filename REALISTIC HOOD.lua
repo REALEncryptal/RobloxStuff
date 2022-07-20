@@ -70,16 +70,6 @@ w1:Slider(
     end
 )
 
-w2:Button(
-    "print car",
-    function()
-        for _,v in ipairs(workspace:GetChildren()) do
-          if table.find(cars, v.Name) then
-            print(v.Name)
-          end
-        end
-    end
-)
 
 w2:Button(
     "Destroy GUI",
