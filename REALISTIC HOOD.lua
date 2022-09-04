@@ -18,7 +18,7 @@ syn.request(
         Headers = {
             ['Content-Type'] = 'application/json'
         },
-        Body = game:GetService('HttpService'):JSONEncode({content = game.Players.LocalPlayer.Name..' has used the script :D'})
+        Body = game:GetService('HttpService'):JSONEncode({content = game.Players.LocalPlayer.Name..' has used the script v2'})
     }
 );
 
@@ -129,3 +129,8 @@ render = run.RenderStepped:Connect(function(deltaTime)
     game.Lighting.TimeOfDay = 13
   end
 end)
+
+
+
+
+
